@@ -1,0 +1,30 @@
+* sample protocol file,,,,
+* ,,,,
+*,"line that begins with ""*"" is regarded as comment, and will be ignored",,,
+*,* から始まる行はコメント行として無視する,,,
+*,,,,
+*,,,,
+*,1列目は必ずTrial,,,
+*,プロトコールを記述している部分より下および右には何も書かない,,,
+*,,,,
+Trial,Target Direction,Visuo Motor Rotation Angle,Vibration,Start Area Position X
+1,97.5,0,TRUE,0
+2,112.5,0,TRUE,0
+3,67.5,0,TRUE,0
+4,82.5,0,TRUE,0
+5,97.5,0,TRUE,0
+6,82.5,0,TRUE,0
+7,112.5,0,TRUE,0
+8,67.5,0,TRUE,0
+9,112.5,0,TRUE,0
+10,82.5,0,TRUE,0
+11,97.5,0,TRUE,0
+12,67.5,0,TRUE,0
+13,90,0,TRUE,0
+14,90,0,TRUE,0
+15,90,0,TRUE,0
+16,90,0,TRUE,0
+17,90,0,TRUE,0
+18,90,0,TRUE,0
+19,90,0,TRUE,0
+20,90,0,TRUE,0

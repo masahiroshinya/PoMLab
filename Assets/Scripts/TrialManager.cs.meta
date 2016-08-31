@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 60bc3a58b285fc94f931be2595f56089
+timeCreated: 1453545777
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - startAreaPrefab: {fileID: 168634, guid: 395eed82c17044a4a98fc3dc6243a44e, type: 2}
+  - startArea: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
