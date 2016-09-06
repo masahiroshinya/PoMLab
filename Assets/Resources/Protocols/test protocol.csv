@@ -1,12 +1,22 @@
-* sample protocol file,,,,
+﻿* ,sample protocol file,,,
+*,,,,
+*,PoMLab use parameters specified in config file as default,,,
+*,"By using a protocol file, the parameters can be overwritten. ",,,
+*,Configで指定されたパラメータから、試行ごとに変更したいものだけをprotocolで指定,,,
+*,,,,
+*,Save protocol files as text file,,,
+*,実験には支障ありませんが、UTF8で保存しないと、日本語は文字化けします。,,,
 * ,,,,
 *,"line that begins with ""*"" is regarded as comment, and will be ignored",,,
-*,* ����n�܂�s�̓R�����g�s�Ƃ��Ė�������,,,
+*,* から始まる行はコメント行として無視する,,,
 *,,,,
 *,,,,
-*,1��ڂ͕K��Trial,,,
-*,�v���g�R�[�����L�q���Ă��镔����艺����щE�ɂ͉��������Ȃ�,,,
+*,1列目は必ずTrial,,,
+*,プロトコールを記述している部分より下および右には何も書かない,,,
 *,,,,
 Trial,Target Direction,Visuo Motor Rotation Angle,Vibration,Start Area Position X
 1,80,0,TRUE,0
-2,120,30,FALSE,0
+2,120,0,TRUE,0
+3,90,30,TRUE,0
+4,70,30,FALSE,0
+5,110,30,FALSE,0

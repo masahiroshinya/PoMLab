@@ -17,7 +17,7 @@ public class Config : MonoBehaviour {
 
     // other parameters
     public string subjectName;
-    public bool hasPaidAssets;
+    public bool hasPaidAssets = false; // boxit & graphmaker
 	
 
 
