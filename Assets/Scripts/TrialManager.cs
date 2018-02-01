@@ -155,11 +155,28 @@ public class TrialManager : MonoBehaviour {
     }
 
     // taget destroyed (　called by Target.OnDestroy()　)
-    public void OnTargetDestroyed()
+    public void OnTargetDestroyed(bool isTimeout)
     {
 
         // data analysis (result to be sent to ExperimentManager)
         analyze();
+
+        // show & update score
+        float score = float.Parse(experimentalParameters["Score"]);
+        experimentManager.UpdateScore(isTimeout, score);
+
+        /*
+        if (isTimeout)
+        {
+            experimentManager.lastScore = 0;
+        }
+        else
+        {
+            experimentManager.lastScore = score;
+            experimentManager.totalScore += score;
+        }
+        experimentManager.scoreText.text = "Total Score: " + experimentManager.totalScore;
+        */
 
         // save acc data after n-sec delay
         float waitTime = float.Parse(experimentalParameters["Recording Time After Target Destruction"]);

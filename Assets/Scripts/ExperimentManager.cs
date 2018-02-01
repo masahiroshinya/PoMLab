@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// for using text in UI
+using UnityEngine.UI;
+
 // for List<T> （　List型を使うため　）
 using System.Collections.Generic;
 
@@ -23,6 +26,9 @@ public class ExperimentManager : MonoBehaviour {
     private GameObject backButton;
     private GameObject plotButton;
 
+    // text
+    public Text scoreText;
+
     // protocol
     public List<Dictionary<string, string>> protocol;    // list of experimental parameters
 
@@ -34,6 +40,10 @@ public class ExperimentManager : MonoBehaviour {
     public int iTrial; // current trial number (starts from 1)
     private string dirName;
     private bool readyForNextTrial;
+
+    // score
+    public float totalScore;
+    public float lastScore;
 
 
     // Use this for initialization
@@ -84,6 +94,9 @@ public class ExperimentManager : MonoBehaviour {
 
         // initialize resultList
         resultList = new List<Dictionary<string, string>>();
+
+        // initialize score
+        totalScore = 0;
 
         // deactivate start button
         startButton.SetActive(false);
@@ -206,15 +219,34 @@ public class ExperimentManager : MonoBehaviour {
         }
     }
 
+    // score animation
+    public void UpdateScore(bool isTimeout, float score)
+    {
+        Debug.Log("show score");
+
+        // update top left text
+        if (isTimeout)
+        {
+            lastScore = 0;
+        }
+        else
+        {
+            lastScore = score;
+            totalScore += score;
+        }
+        scoreText.text = "Total Score: " + totalScore;
+
+        // animation
+         
+
+    }
 
     
     // OnClick event
     public void BackToTitleScene()
     {
-        
         Destroy(GameObject.Find("Protocol"));
         SceneManager.LoadScene("PoMLab Title");
-
     }
 
     // path for acceleration data

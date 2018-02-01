@@ -170,7 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trialManagerPrefab: {fileID: 133530, guid: 6e18eaf8022fb414bbe5f15b910976a9, type: 2}
+  scoreText: {fileID: 1283466174}
   iTrial: 0
+  totalScore: 0
+  lastScore: 0
 --- !u!1 &497690635
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +708,7 @@ GameObject:
   - 222: {fileID: 1283466175}
   - 114: {fileID: 1283466174}
   m_Layer: 5
-  m_Name: TopText
+  m_Name: TotalScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,18 +752,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PoMLab Task
+  m_Text: 'Total Score: 0'
 --- !u!222 &1283466175
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class Protocol : MonoBehaviour {
         {
             // 既に存在したら破棄
             Destroy(gameObject);
-            Debug.Log("config destroyed");
+            Debug.Log("protocol destroyed");
 
         }
         else if (instance == null)

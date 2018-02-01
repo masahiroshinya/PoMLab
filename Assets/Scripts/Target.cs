@@ -12,6 +12,7 @@ public class Target : MonoBehaviour {
     private float targetActivationDelay;
     private float targetTimeout = -1;   // -1: never timeout
     private bool useVibration = false;
+    private bool isTimeout;
     // materials ( set in inspector )
     public Material tagetBeforeGoMaterial;
     public Material tagetAfterGoMaterial;
@@ -33,6 +34,7 @@ public class Target : MonoBehaviour {
         t = Time.time - t0;
         if (targetTimeout != -1 && t > targetTimeout)
         {
+            isTimeout = true;
             Destroy(gameObject);
         }
         
@@ -82,8 +84,8 @@ public class Target : MonoBehaviour {
             }
 
             // destroy
+            isTimeout = false;
             Destroy(gameObject);
-            
         }
     }
 
@@ -102,7 +104,7 @@ public class Target : MonoBehaviour {
         trialManager.timeTargetDestroyed = Time.time;
 
         // send result to TrialManager
-        trialManager.OnTargetDestroyed();
+        trialManager.OnTargetDestroyed(isTimeout);
 
     }
 
