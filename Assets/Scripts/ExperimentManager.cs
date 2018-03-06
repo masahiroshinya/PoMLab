@@ -28,7 +28,8 @@ public class ExperimentManager : MonoBehaviour {
 
     // text
     public Text scoreText;
-
+    public GameObject scorePanel;
+    
     // protocol
     public List<Dictionary<string, string>> protocol;    // list of experimental parameters
 
@@ -234,14 +235,22 @@ public class ExperimentManager : MonoBehaviour {
             lastScore = score;
             totalScore += score;
         }
+        float waitTime = 1.5f;
+        StartCoroutine(ShowScorePanel(waitTime));
         scoreText.text = "Total Score: " + totalScore;
-
-        // animation
-         
-
+        
+    }
+    private IEnumerator ShowScorePanel(float waitTime)
+    {
+        Debug.Log("score panel");
+        string scorePanelText = lastScore + "\n\n" + "Total: " + totalScore;
+        scorePanel.GetComponent<Text>().text = scorePanelText;
+        scorePanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        scorePanel.SetActive(false);
     }
 
-    
+
     // OnClick event
     public void BackToTitleScene()
     {
